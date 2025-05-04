@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 20 - Transition & Animation</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 30px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    /* ===== TRANSITION ===== */
+    .btn {
+      padding: 15px 30px;
+      background-color: #00b4d8;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #0077b6;
+      transform: scale(1.1);
+    }
+
+    /* ===== ANIMATION ===== */
+    .kotak {
+      width: 100px;
+      height: 100px;
+      background-color: #ff6b6b;
+      margin-top: 40px;
+      animation: goyang 1s infinite alternate ease-in-out;
+    }
+
+    @keyframes goyang {
+      0% {
+        transform: rotate(-10deg);
+      }
+      100% {
+        transform: rotate(10deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Transition</h2>
+  <button class="btn">Hover aku</button>
+
+  <h2>Animation</h2>
+  <div class="kotak"></div>
+
+</body>
+</html>
