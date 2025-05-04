@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modul 19 - Responsive & Media Queries</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .kontainer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .box {
+      flex: 1 1 30%;
+      background-color: #a0c4ff;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    /* Responsive: max-width 768px (tablet) */
+    @media screen and (max-width: 768px) {
+      .box {
+        flex: 1 1 45%;
+        background-color: #ffadad;
+      }
+    }
+
+    /* Responsive: max-width 480px (smartphone) */
+    @media screen and (max-width: 480px) {
+      .box {
+        flex: 1 1 100%;
+        background-color: #caffbf;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Responsive Layout dengan Flexbox</h2>
+  <div class="kontainer">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+  </div>
+
+</body>
+</html>
