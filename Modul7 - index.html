@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modul 7 - Width, Height, dan Overflow</title>
+  <style>
+    .box {
+      width: 300px;
+      height: 150px;
+      padding: 10px;
+      border: 2px solid #444;
+      margin-bottom: 20px;
+    }
+
+    .overflow-visible {
+      overflow: visible;
+      background-color: #e3f2fd;
+    }
+
+    .overflow-hidden {
+      overflow: hidden;
+      background-color: #ffebee;
+    }
+
+    .overflow-scroll {
+      overflow: scroll;
+      background-color: #e8f5e9;
+    }
+
+    .overflow-auto {
+      overflow: auto;
+      background-color: #fff3e0;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Overflow: visible (default)</h2>
+  <div class="box overflow-visible">
+    Ini konten panjang banget yang harusnya keluar dari box karena tidak muat, tapi masih tetap tampil karena overflow-nya <strong>visible</strong>.
+  </div>
+
+  <h2>Overflow: hidden</h2>
+  <div class="box overflow-hidden">
+    Ini konten panjang banget yang seharusnya keluar dari box, tapi dipotong karena overflow-nya <strong>hidden</strong>.
+  </div>
+
+  <h2>Overflow: scroll</h2>
+  <div class="box overflow-scroll">
+    Ini konten panjang banget yang bikin muncul <strong>scrollbar</strong> karena overflow-nya <strong>scroll</strong>.
+  </div>
+
+  <h2>Overflow: auto</h2>
+  <div class="box overflow-auto">
+    Ini konten panjang banget. Kalau kontennya kelebihan, maka <strong>scrollbar akan muncul otomatis</strong>.
+  </div>
+
+</body>
+</html>

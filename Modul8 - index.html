@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modul 8 - Position</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 30px;
+    }
+
+    .kotak {
+      width: 200px;
+      height: 100px;
+      background-color: #a0e7e5;
+      margin: 20px;
+      padding: 10px;
+    }
+
+    .static {
+      position: static;
+      background-color: #f3c5ff;
+    }
+
+    .relative {
+      position: relative;
+      top: 20px;
+      left: 20px;
+      background-color: #b4f8c8;
+    }
+
+    .absolute-wrapper {
+      position: relative;
+      background-color: #fcd5ce;
+      height: 150px;
+    }
+
+    .absolute {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #ffafcc;
+      padding: 5px;
+    }
+
+    .fixed {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background-color: #90dbf4;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="kotak static">Posisi: Static (default)</div>
+
+  <div class="kotak relative">Posisi: Relative (geser dari posisi normal)</div>
+
+  <div class="absolute-wrapper kotak">
+    Container Relative
+    <div class="absolute">Posisi: Absolute</div>
+  </div>
+
+  <div class="fixed">Posisi: Fixed (selalu nempel di pojok)</div>
+
+  <p style="margin-top: 400px;">Scroll ke bawah untuk lihat efek fixed!</p>
+
+</body>
+</html>
