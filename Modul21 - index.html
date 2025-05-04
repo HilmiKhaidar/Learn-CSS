@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 21 - CSS Transform</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 30px;
+    }
+
+    .kontainer {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #90e0ef;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .box:hover.scale {
+      transform: scale(1.3);
+    }
+
+    .box:hover.rotate {
+      transform: rotate(45deg);
+    }
+
+    .box:hover.translate {
+      transform: translateX(50px);
+    }
+
+    .box:hover.skew {
+      transform: skewY(20deg);
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Transform: Scale, Rotate, Translate, Skew</h2>
+  <div class="kontainer">
+    <div class="box scale">Scale</div>
+    <div class="box rotate">Rotate</div>
+    <div class="box translate">Translate</div>
+    <div class="box skew">Skew</div>
+  </div>
+
+</body>
+</html>
