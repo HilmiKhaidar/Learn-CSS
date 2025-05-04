@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modul 15 - Position</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 50px;
+    }
+
+    .box {
+      width: 150px;
+      height: 100px;
+      background-color: #a0c4ff;
+      color: white;
+      padding: 10px;
+      margin-bottom: 30px;
+    }
+
+    .static {
+      position: static;
+      background-color: #bdb2ff;
+    }
+
+    .relative {
+      position: relative;
+      left: 30px;
+      top: 10px;
+      background-color: #ffadad;
+    }
+
+    .absolute-wrapper {
+      position: relative;
+      height: 150px;
+      background-color: #eee;
+    }
+
+    .absolute {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #ffd6a5;
+    }
+
+    .fixed {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background-color: #caffbf;
+      z-index: 99;
+    }
+
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      background-color: #9bf6ff;
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    .content {
+      height: 1000px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sticky-header">Ini Sticky Header</div>
+
+  <div class="box static">Position: static (default)</div>
+
+  <div class="box relative">Position: relative (geser dari posisi normal)</div>
+
+  <div class="absolute-wrapper">
+    <div class="box absolute">Position: absolute (relatif ke parent)</div>
+  </div>
+
+  <div class="box fixed">Position: fixed (tetap di layar)</div>
+
+  <div class="content">Scroll ke bawah untuk lihat efek <strong>sticky</strong> dan <strong>fixed</strong>.</div>
+
+</body>
+</html>
