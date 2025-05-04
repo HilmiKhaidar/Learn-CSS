@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modul 17 - Float dan Clear</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 30px;
+    }
+
+    .box {
+      width: 150px;
+      height: 100px;
+      color: white;
+      padding: 10px;
+      margin: 10px;
+    }
+
+    .float-kiri {
+      float: left;
+      background-color: #a0c4ff;
+    }
+
+    .float-kanan {
+      float: right;
+      background-color: #bdb2ff;
+    }
+
+    .clear {
+      clear: both;
+      padding-top: 20px;
+    }
+
+    .kontainer {
+      border: 2px dashed #aaa;
+      padding: 10px;
+      overflow: auto; /* trik untuk mengatasi float */
+    }
+
+    .clearfix::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Float Kiri & Kanan</h2>
+  <div class="kontainer">
+    <div class="box float-kiri">Float Kiri</div>
+    <div class="box float-kanan">Float Kanan</div>
+    <div class="clear">Ini elemen setelah float (dengan clear: both)</div>
+  </div>
+
+  <h2>Float + Clearfix</h2>
+  <div class="kontainer clearfix">
+    <div class="box float-kiri">Box 1</div>
+    <div class="box float-kiri">Box 2</div>
+    <p>Ini teks yang tetap tampil rapi karena div pakai <code>::after { clear: both }</code>.</p>
+  </div>
+
+</body>
+</html>
