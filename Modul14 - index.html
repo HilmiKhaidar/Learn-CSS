@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modul 14 - Display</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 30px;
+    }
+
+    .kotak {
+      background-color: #bdb2ff;
+      color: white;
+      padding: 10px;
+      margin: 10px;
+    }
+
+    .block {
+      display: block;
+    }
+
+    .inline {
+      display: inline;
+      background-color: #ffadad;
+    }
+
+    .inline-block {
+      display: inline-block;
+      background-color: #ffd6a5;
+      width: 120px;
+      height: 50px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .none {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Display: block</h2>
+  <div class="kotak block">Ini elemen block (default div)</div>
+  <div class="kotak block">Setiap elemen tampil di baris baru</div>
+
+  <h2>Display: inline</h2>
+  <span class="kotak inline">Inline 1</span>
+  <span class="kotak inline">Inline 2</span>
+
+  <h2>Display: inline-block</h2>
+  <span class="kotak inline-block">Inline-Block 1</span>
+  <span class="kotak inline-block">Inline-Block 2</span>
+
+  <h2>Display: none</h2>
+  <div class="kotak none">Ini disembunyikan dan tidak akan muncul</div>
+
+</body>
+</html>
