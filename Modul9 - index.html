@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modul 9 - Float dan Clear</title>
+  <style>
+    .container {
+      border: 2px solid #999;
+      padding: 10px;
+    }
+
+    .box {
+      width: 150px;
+      height: 100px;
+      background-color: #ffb3c1;
+      padding: 10px;
+      color: #333;
+      margin: 10px;
+    }
+
+    .kiri {
+      float: left;
+      background-color: #caffbf;
+    }
+
+    .kanan {
+      float: right;
+      background-color: #a0c4ff;
+    }
+
+    .clear {
+      clear: both;
+      padding: 10px;
+      background-color: #f0efeb;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Float: kiri & kanan</h2>
+
+  <div class="container">
+    <div class="box kiri">Float kiri</div>
+    <div class="box kanan">Float kanan</div>
+    <div class="clear">Ini paragraf setelah float. Pake <strong>clear: both</strong> supaya nggak ketiban elemen yang ngambang.</div>
+  </div>
+
+</body>
+</html>
