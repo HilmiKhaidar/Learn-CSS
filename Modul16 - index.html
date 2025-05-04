@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modul 16 - Overflow & Z-Index</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 30px;
+    }
+
+    .overflow-box {
+      width: 250px;
+      height: 120px;
+      border: 2px solid #333;
+      padding: 10px;
+      margin-bottom: 30px;
+    }
+
+    .overflow-auto {
+      overflow: auto;
+    }
+
+    .overflow-hidden {
+      overflow: hidden;
+    }
+
+    .overflow-scroll {
+      overflow: scroll;
+    }
+
+    .z-index-container {
+      position: relative;
+      height: 200px;
+      border: 1px dashed #aaa;
+      margin-top: 50px;
+    }
+
+    .box1, .box2 {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      color: white;
+      padding: 10px;
+    }
+
+    .box1 {
+      background-color: #ffadad;
+      left: 40px;
+      top: 20px;
+      z-index: 1;
+    }
+
+    .box2 {
+      background-color: #9bf6ff;
+      left: 80px;
+      top: 60px;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Overflow</h2>
+
+  <div class="overflow-box overflow-auto">
+    <strong>overflow: auto;</strong><br>
+    Ini isi yang sangat panjang dan akan muncul scroll jika perlu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id ligula sit amet urna aliquam accumsan.
+  </div>
+
+  <div class="overflow-box overflow-hidden">
+    <strong>overflow: hidden;</strong><br>
+    Ini isi yang kepotong dan tidak bisa discroll. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  </div>
+
+  <div class="overflow-box overflow-scroll">
+    <strong>overflow: scroll;</strong><br>
+    Scroll bar selalu muncul walaupun tidak butuh scroll.
+  </div>
+
+  <h2>Z-Index</h2>
+  <div class="z-index-container">
+    <div class="box1">z-index: 1</div>
+    <div class="box2">z-index: 2 (di atas box 1)</div>
+  </div>
+
+</body>
+</html>
