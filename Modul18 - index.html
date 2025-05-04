@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modul 18 - Pseudo-Class dan Pseudo-Element</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 30px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    ul li:first-child {
+      font-weight: bold;
+    }
+
+    ul li:last-child {
+      color: green;
+    }
+
+    p::first-letter {
+      font-size: 2em;
+      color: crimson;
+    }
+
+    p::before {
+      content: "👉 ";
+      color: orange;
+    }
+
+    p::after {
+      content: " ✅";
+      color: limegreen;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Pseudo-Class</h2>
+  <p>
+    <a href="#">Link normal</a><br>
+    <a href="#">Link kedua (cek hover dan visited)</a>
+  </p>
+
+  <ul>
+    <li>Item pertama (first-child)</li>
+    <li>Item tengah</li>
+    <li>Item terakhir (last-child)</li>
+  </ul>
+
+  <h2>Pseudo-Element</h2>
+  <p>Ini contoh kalimat yang diawali dan diakhiri dengan pseudo-element.</p>
+
+</body>
+</html>
