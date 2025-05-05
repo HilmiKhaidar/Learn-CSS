@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container center">
+    <h1>Selamat Datang, Mikhaii!</h1>
+    <p>Silakan pilih menu:</p>
+    <a href="profil.html" class="btn">Profil</a>
+    <a href="todo.html" class="btn">To-Do List</a>
+    <button onclick="logout()" class="btn logout">Logout</button>
+  </div>
+
+  <script>
+    function logout() {
+      localStorage.clear();
+      alert("Berhasil logout dan menghapus data lokal.");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
