@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modul 24 - Pseudo Class & Element</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 30px;
+    }
+
+    /* === PSEUDO-CLASS === */
+    a {
+      color: #0077b6;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: #023e8a;
+      text-decoration: underline;
+    }
+
+    input:focus {
+      border: 2px solid #00b4d8;
+      outline: none;
+    }
+
+    ul li:first-child {
+      color: red;
+    }
+
+    ul li:last-child {
+      color: green;
+    }
+
+    ul li:nth-child(odd) {
+      background-color: #caf0f8;
+    }
+
+    /* === PSEUDO-ELEMENT === */
+    p::first-letter {
+      font-size: 2rem;
+      color: #f15bb5;
+    }
+
+    p::after {
+      content: " ✨";
+    }
+
+    h2::before {
+      content: "📌 ";
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Pseudo Class & Element</h2>
+
+  <p>Belajar CSS itu seru banget dan berguna di dunia nyata!</p>
+
+  <a href="#">Arahkan kursor ke sini</a>
+
+  <br /><br />
+  <input type="text" placeholder="Klik aku" />
+
+  <h3>Daftar:</h3>
+  <ul>
+    <li>Item pertama</li>
+    <li>Item kedua</li>
+    <li>Item ketiga</li>
+    <li>Item terakhir</li>
+  </ul>
+
+</body>
+</html>
