@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modul 23 - Flexbox vs Grid</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+
+    .container {
+      margin-top: 20px;
+      background-color: #f1f1f1;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .flex-container {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .item {
+      background-color: #80ed99;
+      padding: 25px;
+      text-align: center;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Flexbox vs Grid</h1>
+
+  <h2>Flexbox (1 dimensi)</h2>
+  <div class="container flex-container">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h2>Grid (2 dimensi)</h2>
+  <div class="container grid-container">
+    <div class="item">Item A</div>
+    <div class="item">Item B</div>
+    <div class="item">Item C</div>
+  </div>
+
+</body>
+</html>
