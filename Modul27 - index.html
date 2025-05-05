@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modul 27 - To-Do List</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f8f9fa;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0077b6;
+    }
+
+    .todo-container {
+      max-width: 400px;
+      margin: auto;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    input[type="text"] {
+      width: 75%;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #00b4d8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    li.done span {
+      text-decoration: line-through;
+      color: #aaa;
+    }
+
+    .delete-btn {
+      background-color: #f15bb5;
+      border: none;
+      padding: 5px 10px;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>To-Do List</h1>
+  <div class="todo-container">
+    <input type="text" id="todoInput" placeholder="Tulis tugas..." />
+    <button onclick="addTodo()">Tambah</button>
+
+    <ul id="todoList"></ul>
+  </div>
+
+  <script>
+    function addTodo() {
+      const input = document.getElementById("todoInput");
+      const value = input.value.trim();
+
+      if (value === "") return;
+
+      const listItem = document.createElement("li");
+      const span = document.createElement("span");
+      span.textContent = value;
+
+      span.onclick = () => {
+        listItem.classList.toggle("done");
+      };
+
+      const deleteBtn = document.createElement("button");
+      deleteBtn.textContent = "Hapus";
+      deleteBtn.className = "delete-btn";
+      deleteBtn.onclick = () => {
+        listItem.remove();
+      };
+
+      listItem.appendChild(span);
+      listItem.appendChild(deleteBtn);
+
+      document.getElementById("todoList").appendChild(listItem);
+      input.value = "";
+    }
+  </script>
+
+</body>
+</html>
