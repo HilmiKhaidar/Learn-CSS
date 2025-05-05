@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modul 25 - Responsive Design</title>
+  <style>
+    /* ======== RESET DASAR ======== */
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #0077b6;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .box {
+      flex: 1 1 calc(33.333% - 20px); /* 3 kolom default */
+      background-color: #90e0ef;
+      padding: 30px;
+      text-align: center;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    /* ======== RESPONSIVE: TABLET (≤ 768px) ======== */
+    @media (max-width: 768px) {
+      .box {
+        flex: 1 1 calc(50% - 20px); /* 2 kolom */
+      }
+
+      header {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* ======== RESPONSIVE: MOBILE (≤ 480px) ======== */
+    @media (max-width: 480px) {
+      .box {
+        flex: 1 1 100%; /* 1 kolom */
+      }
+
+      header {
+        padding: 15px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Modul 25: Responsive Web Design</h1>
+    <p>Tampilan fleksibel di semua ukuran layar</p>
+  </header>
+
+  <div class="container">
+    <div class="box">Konten 1</div>
+    <div class="box">Konten 2</div>
+    <div class="box">Konten 3</div>
+  </div>
+
+</body>
+</html>
