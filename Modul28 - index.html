@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modul 28 - To-Do List + LocalStorage</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f0f8ff;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0077b6;
+    }
+
+    .todo-container {
+      max-width: 400px;
+      margin: auto;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    input[type="text"] {
+      width: 75%;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #00b4d8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    li.done span {
+      text-decoration: line-through;
+      color: #aaa;
+    }
+
+    .delete-btn {
+      background-color: #f15bb5;
+      border: none;
+      padding: 5px 10px;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>To-Do List + LocalStorage</h1>
+  <div class="todo-container">
+    <input type="text" id="todoInput" placeholder="Tulis tugas..." />
+    <button onclick="addTodo()">Tambah</button>
+
+    <ul id="todoList"></ul>
+  </div>
+
+  <script>
+    let todos = JSON.parse(localStorage.getItem("todos")) || [];
+
+    function saveTodos() {
+      localStorage.setItem("todos", JSON.stringify(todos));
+    }
+
+    function renderTodos() {
+      const list = document.getElementById("todoList");
+      list.innerHTML = "";
+
+      todos.forEach((todo, index) => {
+        const listItem = document.createElement("li");
+        if (todo.done) listItem.classList.add("done");
+
+        const span = document.createElement("span");
+        span.textContent = todo.text;
+
+        span.onclick = () => {
+          todos[index].done = !todos[index].done;
+          saveTodos();
+          renderTodos();
+        };
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Hapus";
+        deleteBtn.className = "delete-btn";
+        deleteBtn.onclick = () => {
+          todos.splice(index, 1);
+          saveTodos();
+          renderTodos();
+        };
+
+        listItem.appendChild(span);
+        listItem.appendChild(deleteBtn);
+        list.appendChild(listItem);
+      });
+    }
+
+    function addTodo() {
+      const input = document.getElementById("todoInput");
+      const value = input.value.trim();
+      if (value === "") return;
+
+      todos.push({ text: value, done: false });
+      input.value = "";
+      saveTodos();
+      renderTodos();
+    }
+
+    // Tampilkan data saat pertama kali halaman dibuka
+    renderTodos();
+  </script>
+
+</body>
+</html>
